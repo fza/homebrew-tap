@@ -17,6 +17,8 @@ for working in it.
   strings in every `.rb` file.
 - **A new tool gets a row in the README's table** when its first cask lands: name, what it is, and
   its upstream for a fork.
+- **A README or rules change is pushed to `origin`** (`fza/homebrew-tap`, branch `main`) once
+  committed. Casks arrive through the publishing project's release job, never by hand.
 
 ## Publishing a project into this tap
 

@@ -18,12 +18,15 @@ Upgrades: `brew update && brew upgrade`.
 | name | what it is | upstream |
 |---|---|---|
 | [`sdd`](Casks/sdd.rb) | Signal-Dialogue-Decision graph CLI, built from the fork [fza/sdd](https://github.com/fza/sdd) | [networkteam/sdd](https://github.com/networkteam/sdd) |
+| [`vale`](Casks/vale.rb) | Prose linter, built from the fork [fza/vale](https://github.com/fza/vale) | [errata-ai/vale](https://github.com/errata-ai/vale) |
 
 A fork installs under the same command name as its upstream. Installing both puts two binaries of
 the same name on `PATH`, and whichever directory comes first wins, so keep one of them.
 
-Fork versions read `<upstream version>.fza.<n>`, e.g. `0.18.0-alpha.2.fza.22`: the upstream
-release the fork builds on, then the fork's own build number.
+Fork versions carry the upstream release the fork builds on, then the fork's own build number:
+`<upstream version>.fza.<n>` where the upstream version is already a prerelease, e.g.
+`0.18.0-alpha.2.fza.22`, and `<upstream version>-fza.<n>` where it is a release, e.g.
+`3.25.1-fza.1`, since a release followed by `.fza.<n>` is not a semantic version.
 
 ## Layout
 
