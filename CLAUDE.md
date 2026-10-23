@@ -48,14 +48,16 @@ homebrew_casks:
     description: <one-line description>
     hooks:
       post:
-        install: |
-          if OS.mac?
-            system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/<binary>"]
+        install_steps: |
+          on_macos do
+            run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{ .StagedPath }}/<binary>"]
           end
 ```
 
 **The quarantine hook is what makes an unsigned binary runnable.** Without it macOS refuses the
-downloaded binary until the attribute is cleared by hand.
+downloaded binary until the attribute is cleared by hand. It is written as `install_steps`, which
+GoReleaser renders as Homebrew's declarative `postflight_steps`: the older `install` hook renders the
+`postflight` stanza Homebrew deprecated, and it warns on every install.
 
 **A fork keeps its upstream's release configuration where it can.** Take the owner from the
 environment GitHub Actions sets, `owner: "{{ .Env.GITHUB_REPOSITORY_OWNER }}"`, and the same file
