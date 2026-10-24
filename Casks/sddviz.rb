@@ -2,15 +2,15 @@
 cask "sddviz" do
   app "sddviz.app"
 
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     on_arm do
-      sha256 "8b4908483c48e5d703d3f31eeb6ca672305b5b95eb4b7ba5b233c1f684f039bf"
+      sha256 "bb27211f67f921c23affaef5b2402473f6340a2bd8ded1585b445d8012c070a9"
       url "https://github.com/fza/sddviz/releases/download/v#{version}/sddviz_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "62aa5dc29b9284643ce8de42f69940a04b70ef7c70278be1c12ebf107cb8a186"
+      sha256 "641c3c26c60a13182a6c322b21d3db60322e4b7d9b2f69da35a05b02896f4761"
       url "https://github.com/fza/sddviz/releases/download/v#{version}/sddviz_#{version}_darwin_amd64.tar.gz"
     end
   end
